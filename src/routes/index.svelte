@@ -1,7 +1,20 @@
 <script>
 	import TodoItem from '$components/TodoItem/index.svelte'
 
-	let todos = []
+	let todos = [
+		{
+			name: 'Buy milk',
+			isCompleted: false
+		},
+		{
+			name: 'Walk the dog',
+			isCompleted: false
+		},
+		{
+			name: 'Do homework',
+			isCompleted: true
+		}
+	]
 	let addTodoInput = ''
 
 	let completedTodos = []
@@ -46,7 +59,7 @@
 					id="addTodo"
 					type="text"
 					placeholder="Enter a task i.e. 'Buy milk' "
-					class="p-3 border w-full rounded-xl"
+					class="p-3 border w-full rounded-xl outline-none focus-within:border-black"
 				/>
 			</div>
 		</label>
@@ -54,7 +67,7 @@
 
 	{#if todos.length}
 		<p class="text-center mt-8 mb-2">
-			You have {numOfIncompleteTodos} uncompleted
+			You have {numOfIncompleteTodos} incomplete
 			{#if numOfIncompleteTodos == 1}todo{:else}todos{/if}.
 		</p>
 		<ul class="max-w-xl mx-auto space-y-3">
