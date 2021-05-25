@@ -20,7 +20,7 @@
 	let completedTodos = []
 	$: completedTodos = todos.filter((item) => item.isCompleted)
 
-	let numOfIncompleteTodos = 0
+	let numOfIncompleteTodos = null
 	$: numOfIncompleteTodos = todos?.length - completedTodos?.length
 
 	const addTodo = () => {
@@ -39,15 +39,15 @@
 	}
 </script>
 
-<svelte:head
-	><title
-		>{numOfIncompleteTodos > 0
+<svelte:head>
+	<title>
+		{numOfIncompleteTodos > 0
 			? `${numOfIncompleteTodos} ${
 					numOfIncompleteTodos > 1 ? 'todos' : 'todo'
 			  }`
-			: 'Todos'} - Indie</title
-	></svelte:head
->
+			: 'Todos'} - Indie
+	</title>
+</svelte:head>
 
 <main class="container">
 	<form on:submit|preventDefault={addTodo} class="max-w-xl mx-auto mt-12">
