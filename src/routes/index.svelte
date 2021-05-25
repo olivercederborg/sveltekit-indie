@@ -1,5 +1,5 @@
 <script>
-	import TodoItem from '$components/TodoItem/index.svelte'
+	import TodoItem from '$components/TodoItem.svelte'
 
 	let todos = [
 		{
