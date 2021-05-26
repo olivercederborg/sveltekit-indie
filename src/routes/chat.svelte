@@ -1,7 +1,6 @@
 <script>
 	import { afterUpdate, onMount } from 'svelte'
 	import { messages } from '$lib/stores.js'
-	import { autoMessages } from '../chatArrays'
 	import ChatMessage from '$components/ChatMessage.svelte'
 	import ChatInputField from '$components/ChatInputField.svelte'
 
