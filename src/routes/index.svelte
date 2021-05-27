@@ -1,27 +1,12 @@
 <script>
 	import TodoItem from '$components/TodoItem.svelte'
+	import { todos } from '$lib/stores'
 
-	let todos = [
-		{
-			name: 'Buy milk',
-			isCompleted: false
-		},
-		{
-			name: 'Walk the dog',
-			isCompleted: false
-		},
-		{
-			name: 'Do homework',
-			isCompleted: true
-		}
-	]
 	let addTodoInput = ''
 
-	let completedTodos = []
-	$: completedTodos = todos.filter((item) => item.isCompleted)
+	$: completedTodos = $todos.filter((item) => item.isCompleted)
 
-	let numOfIncompleteTodos = null
-	$: numOfIncompleteTodos = todos?.length - completedTodos?.length
+	$: numOfIncompleteTodos = $todos?.length - completedTodos?.length
 
 	const addTodo = () => {
 		let newTodo = {
@@ -29,13 +14,13 @@
 			isCompleted: false
 		}
 
-		todos = [...todos, newTodo]
+		$todos = [...$todos, newTodo]
 		addTodoInput = ''
 	}
 
-	function removeTodo(event) {
-		todos.splice(event.detail.index, 1)
-		todos = todos
+	const removeTodo = (event) => {
+		$todos.splice(event.detail.index, 1)
+		$todos = $todos
 	}
 </script>
 
@@ -65,13 +50,13 @@
 		</label>
 	</form>
 
-	{#if todos.length}
+	{#if $todos.length}
 		<p class="text-center mt-8 mb-2">
 			You have {numOfIncompleteTodos} incomplete
 			{#if numOfIncompleteTodos == 1}todo{:else}todos{/if}.
 		</p>
 		<ul class="max-w-xl mx-auto space-y-3">
-			{#each todos as todo, i}
+			{#each $todos as todo, i}
 				<TodoItem
 					{...todo}
 					index={i}
