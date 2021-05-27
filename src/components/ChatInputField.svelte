@@ -32,18 +32,18 @@
 
 <form
 	on:submit|preventDefault={sendMessage}
-	class="flex items-center bg-gray-100 overflow-hidden rounded-lg shadow-lg mx-4"
+	class="flex items-center bg-gray-100 overflow-hidden shadow-lg fixed bottom-0 right-0 left-0"
 >
 	<input
 		bind:value={messageInput}
 		type="text"
 		required
 		placeholder="Type a message..."
-		class="w-full pt-3 pb-6 bg-transparent text-gray-800 px-3 outline-none"
+		class="w-full pt-3 pb-6 bg-transparent text-gray-800 px-4 outline-none"
 	/>
 	<button
 		type="submit"
-		class="self-stretch px-5 bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors duration-200 ease-in-out"
+		class="self-stretch px-6 bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors duration-200 ease-in-out"
 	>
 		SEND
 	</button>
