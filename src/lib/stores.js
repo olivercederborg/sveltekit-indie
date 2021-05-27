@@ -19,3 +19,18 @@ export const messages = writable([
 ])
 
 export const username = writable('Oliver')
+
+export const todos = writable([
+	{
+		name: 'Buy milk',
+		isCompleted: false
+	},
+	{
+		name: 'Walk the dog',
+		isCompleted: false
+	},
+	{
+		name: 'Do homework',
+		isCompleted: true
+	}
+])

@@ -34,8 +34,7 @@
 				<Checkmark20 class="text-gray-700" />
 			{/if}
 		</span>
-		<span class={isCompleted ? 'line-through text-gray-400' : ''}>{name}</span
-		>
+		<span class={isCompleted && 'line-through text-gray-400'}>{name}</span>
 	</div>
 	<span
 		on:click={deleteTodo}
