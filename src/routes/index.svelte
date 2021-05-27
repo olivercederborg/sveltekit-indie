@@ -34,8 +34,8 @@
 	</title>
 </svelte:head>
 
-<main class="container">
-	<form on:submit|preventDefault={addTodo} class="max-w-xl mx-auto mt-12">
+<main class="container mt-24">
+	<form on:submit|preventDefault={addTodo} class="max-w-xl mx-auto">
 		<label for="addTodo" class="flex flex-col">
 			Add todo
 			<div class="flex">
