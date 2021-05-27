@@ -23,10 +23,10 @@
 	<title>Chat - Indie</title>
 </svelte:head>
 
-<main class="max-h-screen">
+<main class="max-h-screen my-16">
 	<ul
 		id="chat"
-		class="h-[600px] overflow-y-auto relative w-full flex flex-col space-y-4 py-8 px-4"
+		class="overflow-y-auto relative w-full flex flex-col space-y-4 pt-8 pb-16 px-4"
 	>
 		{#each $messages as message, i (i)}
 			<ChatMessage {message} />
